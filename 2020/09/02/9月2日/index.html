@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 氓之蚩蚩的博客</title>
+  <title>leetcode每日一题——预测赢家 | 氓之蚩蚩的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="氓之蚩蚩，抱布贸丝。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="氓之蚩蚩的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="这道题是9月1日的题目，主要写下当时的思路和官方解答的思路。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode每日一题——预测赢家">
+<meta property="og:url" content="http://yoursite.com/2020/09/02/9%E6%9C%882%E6%97%A5/index.html">
 <meta property="og:site_name" content="氓之蚩蚩的博客">
-<meta property="og:description" content="氓之蚩蚩，抱布贸丝。">
+<meta property="og:description" content="这道题是9月1日的题目，主要写下当时的思路和官方解答的思路。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-02T08:08:19.284Z">
 <meta property="article:author" content="氓之蚩蚩">
+<meta property="article:tag" content="动态规划 算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="氓之蚩蚩的博客" type="application/atom+xml">
@@ -138,36 +141,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-9月2日" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/9%E6%9C%882%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2020-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/9%E6%9C%882%E6%97%A5/">leetcode每日一题——预测赢家</a>
+    <h1 class="article-title" itemprop="name">
+      leetcode每日一题——预测赢家
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/09/02/9%E6%9C%882%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2020-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这道题是9月1日的题目，主要写下当时的思路和官方解答的思路。</p>
+<hr>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>  给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。</p>
+<p>  给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。</p>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>  1 &lt;= 给定的数组长度 &lt;= 20.<br>  数组里所有分数都为非负数且不会大于 10000000 。<br>  如果最终两个玩家的分数相等，那么玩家 1 仍为赢家。</p>
+<hr>
+<h2 id="我当时的思路"><a href="#我当时的思路" class="headerlink" title="我当时的思路"></a>我当时的思路</h2><ol>
+<li>第一反应是暴力列举每种可能，从中找到使玩家1分数最大的选取方法。因为题目限定分数数组的长度并不大，暴力法可行，但是性能不好。</li>
+<li>接下来就是如何实现这个暴力算法。当时想过构造成一棵二叉树，令根节点为0，然后第一层为玩家 1 或玩家 2 所选，第二层反之为玩家 2 或玩家 1 所选，交替构造。</li>
+<li>第三步就是要计算每个玩家获得的分数，看看玩家 1 是否有获得最大的可能。</li>
+</ol>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><p>  真正到代码实现时，发现这棵树的构造比预想的困难，因为每次从数组两端取数，初始化节点，会发现这个节点不仅会成为当前节点的子节点，还会成为当前节点的孙子节点，十分麻烦，后面没实现出来。直到去看官方的解答，发现并不需要构造树，直接从数组取数出来后，利用玩家之间分差值≥0作为判断条件，实现递归就完事了。</p>
+<hr>
+<h2 id="官方思路"><a href="#官方思路" class="headerlink" title="官方思路"></a>官方思路</h2><ol>
+<li><p>递归实现：<br>利用start和end标记数组的开头和结尾，如果start=end，则只剩一个数，直接取就可以了；如果start＜end，那么在开头和结尾的数中选一个。每次选取时，计算当前选取的数与子问题中选取的数造成的分差值。最后，在左选取和右选取两个可能中选取分差值较大的，如果≥0，那么玩家 1 就可能赢。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">PredictTheWinner</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> thinking(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>)&gt;=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">thinking</span><span class="params">(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start==end)</span><br><span class="line">        <span class="keyword">return</span> nums[start];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> chooseLeft=nums[start]-thinking(nums,start+<span class="number">1</span>,end);</span><br><span class="line">        <span class="keyword">int</span> chooseRight=nums[end]-thinking(nums,start,end-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> Math.max(chooseLeft,chooseRight);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态规划：<br>动态规划的实现其实就是对1递归算法的优化，因为递归算法中存在大量的重复计算。<br>定义二维数组dp，行和列都为数组的长度，dp[i][j]表示当数组剩下部分下标i到下标j时，当前玩家与另一个玩家的分差的最大值。当i≤j时，数组才有意义，则i＞j时，dp[i][j]=0。<br>当i=j时，dp[i][j]=nums[i]。<br>当i＜j时，玩家可以选取nums[i]或nums[j]。玩家会选择使自己分数最大化的那边。这里就写下相关定义，代码其实跟递归算法大致相同。</p>
+</li>
+</ol>
+<hr>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>来源：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/predict-the-winner">力扣（LeetCode)</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -179,7 +225,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -192,17 +238,94 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/02/9%E6%9C%882%E6%97%A5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -223,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
