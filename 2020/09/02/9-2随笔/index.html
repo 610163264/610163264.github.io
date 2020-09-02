@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: -动态规划 -算法 | 氓之蚩蚩的博客</title>
+  <title>9.2随笔 | 氓之蚩蚩的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="氓之蚩蚩，抱布贸丝。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="氓之蚩蚩的博客">
-<meta property="og:url" content="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%AE%97%E6%B3%95/index.html">
+  <meta name="description" content="一些感想 今天leetcode的每日一题，是判别字符串是否属于数值，要用有限状态机，遥想当年计算机组成原理确实有学过，大概模型确实记得，但真的没想过应用。有限状态机，多个状态之间根据某些条件转换，这道题就是设定属于数值的多个状态，例如遇到小数点就跳转到小数点前的数字等等，成功从初始0状态到合法的结束状态，就说明数值合法。大概先写这么多吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9.2随笔">
+<meta property="og:url" content="http://yoursite.com/2020/09/02/9-2%E9%9A%8F%E7%AC%94/index.html">
 <meta property="og:site_name" content="氓之蚩蚩的博客">
-<meta property="og:description" content="氓之蚩蚩，抱布贸丝。">
+<meta property="og:description" content="一些感想 今天leetcode的每日一题，是判别字符串是否属于数值，要用有限状态机，遥想当年计算机组成原理确实有学过，大概模型确实记得，但真的没想过应用。有限状态机，多个状态之间根据某些条件转换，这道题就是设定属于数值的多个状态，例如遇到小数点就跳转到小数点前的数字等等，成功从初始0状态到合法的结束状态，就说明数值合法。大概先写这么多吧。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-02T10:42:11.000Z">
+<meta property="article:modified_time" content="2020-09-02T11:00:49.884Z">
 <meta property="article:author" content="氓之蚩蚩">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="氓之蚩蚩的博客" type="application/atom+xml">
@@ -132,71 +135,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-9-2随笔" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/9%E6%9C%882%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2020-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/9%E6%9C%882%E6%97%A5/">leetcode每日一题——预测赢家</a>
+    <h1 class="article-title" itemprop="name">
+      9.2随笔
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/09/02/9-2%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2020-09-02T10:42:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h2><ul>
+<li><p>今天leetcode的每日一题，是判别字符串是否属于数值，要用有限状态机，遥想当年计算机组成原理确实有学过，大概模型确实记得，但真的没想过应用。有限状态机，多个状态之间根据某些条件转换，这道题就是设定属于数值的多个状态，例如遇到小数点就跳转到小数点前的数字等等，成功从初始0状态到合法的结束状态，就说明数值合法。大概先写这么多吧。</p>
+<a id="more"></a>
+</li>
+<li><p>关于java的复习，暂时还是复习到java的容器部分，今天弄博客弄了一天。</p>
+</li>
+<li><p>关于hexo博客，不知为何，在主目录下的config.yml下修改author属性值，主页并没有改变，猜想是hexo的所有文章搜索功能屏蔽了meta标签。查了半天，暂时不知解决。最后只是去./blog/themes/yilia/layout/_partial/left_col.ejs中，在&lt;h1 class=”head-author”&gt;&lt;\h1&gt;中添加了我的博客名称。</p>
+</li>
+<li><p>听说网飞买了《三体》的电视剧版权，这部国产科幻神作，由美国人来拍，感觉没内味。希望他们只是拍第一位破壁人——泰勒的部分吧，毕竟他是美国前国防部长，确实属于美国人熟悉的部分——当然得脑补，书内没有特别详细描写他面壁计划的实行。</p>
+</li>
+<li><p>s10快要开战了，但越南队由于国家防疫政策——出国后不能回去，无法来上海比赛。拳头宣布lck三号种子不用打入围赛，直接进入正赛，不过入围赛还是有LGD看的。</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-动态规划 -算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/02/9-2%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/09/02/9%E6%9C%882%E6%97%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode每日一题——预测赢家</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -217,9 +328,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
